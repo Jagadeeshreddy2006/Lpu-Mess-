@@ -255,10 +255,10 @@
           </div>
 
           <div class="title-col">
-            <div class="meal-title">Dinner</div>
-            <div class="sid">12311129</div>
-            <div class="line">Cheruku Sai Kumar</div>
-            <div class="line">Mess-Centre-02</div>
+            <div class="meal-title" id="mealTitle"></div>
+            <div class="sid">12311172</div>
+            <div class="line">Burraleni Kumar</div>
+            <div class="line">Mess BS-09</div>
           </div>
         </div>
 
@@ -325,7 +325,21 @@ function updateDT(){
 }
 updateDT();
 setInterval(updateDT,1000);
+  function updateMeal() {
+  const now = new Date();
+  const hour = now.getHours();
+  let meal = "Dinner";
+
+  if (hour < 11) meal = "Breakfast";
+  else if (hour < 16) meal = "Lunch";
+
+  document.getElementById("mealTitle").textContent = meal;
+}
+
+updateMeal();
+
 </script>
 
 </body>
 </html>
+
