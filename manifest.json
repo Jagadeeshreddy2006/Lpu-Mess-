@@ -1,10 +1,11 @@
 {
-  "name": "Mess Pass",
+  "name": "Mess Coupon",
   "short_name": "MessPass",
-  "start_url": "index.html",
+  "start_url": "./index.html",
   "display": "standalone",
-  "background_color": "#3b3b3b",
-  "theme_color": "#3b3b3b",
+  "background_color": "#ffffff",
+  "theme_color": "#333333",
+  "scope": "./",
   "icons": [
     {
       "src": "icon-192.png",
@@ -18,4 +19,3 @@
     }
   ]
 }
-
