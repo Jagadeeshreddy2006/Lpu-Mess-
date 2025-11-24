@@ -19,7 +19,6 @@
     font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     background:#f3f3f0;
     color:var(--text);
-    
   }
 
   /* Full width top bar */
@@ -41,31 +40,45 @@
   }
   .topbar span{font-size:17px;font-weight:400}
 
+  /* ❌ Close button on top-right */
+  .close-btn{
+    position:absolute;
+    right:12px;
+    top:50%;
+    transform:translateY(-50%);
+    background:transparent;
+    border:none;
+    color:#ffffff;
+    font-size:22px;
+    font-weight:400;
+    padding:4px 6px;
+  }
+
   .wrap{display:flex;justify-content:center;padding:18px 8px 40px;}
-.card{
-    width:94%;
+  .card{
+    width:97%;
     max-width:var(--card-max);
     background:#f2f2f2;       /* less bright white */
     border-radius:var(--card-radius);
-
     box-shadow:
         0 3px 8px rgba(0,0,0,0.6),    /* base shadow */
         0 8px 18px rgba(0,0,0,0.12);   /* soft spread */
-
     position:relative;
-}
+  }
+
   /* Timer Box */
   .timer{
     position:absolute;
     top:4px;
     right:8px;
-    min-width:50px;
+    min-width:45px;
     height:40px;
     padding:0 10px;
     border-radius:18px;
     background:#999;   /* dark grey */
     display:flex;align-items:center;justify-content:center;
-    font-size:20px;font-weight:600;
+    font-size:18px;font-weight:400;
+    text-shadow:0px 1px 2px rgba(0,0,0,0.2);
     box-shadow:0 8px 18px rgba(0,0,0,0.12), inset 0 2px 6px rgba(255,255,255,0.6);
   }
 
@@ -75,11 +88,10 @@
     display:flex;
     gap:12px;
     align-items:flex-start;
-    margin-top:20px;   /* moved down */
-}
+    margin-top:18px;
+  }
 
-
-.avatar{
+  .avatar{
     width:104px;
     height:104px;
     border-radius:50%;
@@ -92,44 +104,44 @@
     justify-content:center;
     border:1px solid #000;
     box-shadow:0 12px 26px rgba(0,0,0,0.18);
-    margin-top:5px;     /* 👈 add this */
-    margin-left:-10px;
+    margin-top:0px;
+    margin-left:-12px;
     margin-right:-5px;
-}
-
+  }
 
   .title-col{flex:1;}
 
-.meal-title{
-    font-size:32px;
-    font-weight:600;          /* reduced thickness */
+  .meal-title{
+    font-size:30px;
+    font-weight:500;
     color:#000;
-    margin-top:4px;
-    margin-bottom:4px;
+    margin-top:1px;
+    margin-bottom:6px;
+    margin-left:1px;
     line-height:1.8;
-    letter-spacing:-0.4px;    /* NEW — tighter letters */
+    letter-spacing:-0.9px;
     text-shadow:0px 1px 2px rgba(0,0,0,0.9);
-}
+  }
 
-
-.sid, .line {
-    font-size:18px;
-    font-weight:700;
+  .sid, .line {
+    font-size:16px;
+    font-weight:600;
     color:#000;
-    margin-bottom:4px;   /* reduced (was 8px) */
-    line-height:1.2;    /* slightly tighter */
-    text-shadow:0px 1px 2px rgba(0,0,0,0.6);
-}
-
+    margin-bottom:4px;
+    margin-left:3px;
+    line-height:1.4;
+    text-shadow:0px 1px 2px rgba(0,0,0,0.9);
+  }
 
   /* COURSE CODE — more spacing top + bottom */
   .course{
-    font-size:17px;
+    font-size:16px;
     font-weight:400;
-    margin-top:26px;      /* more space above */
-    margin-bottom:38px;   /* more space below */
+    margin-top:24px;
+    margin-bottom:38px;
+    margin-left:-3px;
     line-height:1.3;
-    letter-spacing:-0.2px; 
+    letter-spacing:0.2px; 
     color:#222;
     text-shadow:0px 1px 2px rgba(0,0,0,0.3);
   }
@@ -138,10 +150,10 @@
   .dt-row{
     display:flex;
     justify-content:space-between;
-    margin-top:14px;
-    margin-bottom:46px;   /* increased */
+    margin-top:32px;
+    margin-bottom:42px;
     padding:0 64px;
-    margin-left:-56px;
+    margin-left:-58px;
     text-shadow:0px 1px 2px rgba(0,0,0,0.4);
   }
   .dt-row .date,.dt-row .time{
@@ -154,10 +166,9 @@
     text-align:center;
     font-size:26px;
     font-weight:700;
-    color:#32CD32;
+    color:#008000;
     margin-bottom:8px;
     text-shadow:0px 1px 2px rgba(0,0,0,0.2);
-    
   }
 
   /* Rate Button */
@@ -170,58 +181,67 @@
     border-radius:10px;
     border:2px solid var(--brown);
     background:#f3f3f0;
-    font-size:15px;
+    font-size:16px;
     font-weight:600;
-   
   }
 
   /* Brown box — FULL WIDTH again */
   .brown-box{
-    width:100%;           /* FIXED: full width restored */
+    width:100%;
     background:var(--brown);
     padding:22px;
     border-bottom-left-radius:var(--card-radius);
     border-bottom-right-radius:var(--card-radius);
-    margin-top:-4px;
+    margin-top:-12px;
   }
 
   .brown-inner{
     background:#FEFEFE;
     border-radius:10px;
     border:10px solid transparent;
-    height:300px; 
+    height:350px; 
     width:100%;
     overflow:hidden;
-
-   
   }
-.avatar{
-    width:140px;
-    height:140px;
+
+  .avatar{
+    width:145px;
+    height:148px;
     border-radius:50%;
     overflow:hidden;
     box-shadow:0 12px 26px rgba(0,0,0,0.18);
-}
+  }
 
-.avatar-img{
+  .avatar-img{
     width:100%;
     height:100%;
     object-fit:cover;
     object-position: center 10%;
+  }
+.close-btn{
+    position:absolute;
+    right:12px;
+    top:18px;
+    background:transparent;
+    border:none;
+    font-size:22px;
+    color:#fff;
+    cursor:pointer;
 }
 
 
 </style>
-  <link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#333333">
-
 </head>
 <body>
 
-  <div class="topbar">
+<div class="topbar">
     <div class="handle"></div>
     <span>Mess Pass</span>
-  </div>
+
+    <!-- Close button right side -->
+    <button class="close-btn" onclick="history.back()">✖</button>
+</div>
+
 
   <div class="wrap">
     <article class="card">
@@ -230,10 +250,9 @@
 
       <div class="content">
         <div class="profile-row">
-         <div class="avatar">
-  <img src="profile.jpg" class="avatar-img">
-</div>
-
+          <div class="avatar">
+            <img src="profile.jpg" class="avatar-img">
+          </div>
 
           <div class="title-col">
             <div class="meal-title">Dinner</div>
@@ -261,17 +280,16 @@
       </div>
 
       <div class="brown-box">
-       <div class="brown-inner">
-  <video src="video.mp4" autoplay muted playsinline style="
-      width:94%;
-      height:94%;
-      object-fit:contain;   /* shows full video without cutting */
-      display:block;
-      margin-left:18px;
-      margin-top:20px; 
-  "></video>
-</div>
-
+        <div class="brown-inner">
+          <video src="video.mp4" autoplay muted playsinline style="
+              width:94%;
+              height:94%;
+              object-fit:contain;
+              display:block;
+              margin-left:14px;
+              margin-top:20px; 
+          "></video>
+        </div>
       </div>
 
     </article>
@@ -291,7 +309,7 @@ let t = setInterval(()=>{
   } else {
     timerEl.textContent = sec;
   }
-},1000);
+},1000); 
 
 /* Live date/time */
 function pad(n){return n<10?"0"+n:n;}
@@ -311,6 +329,3 @@ setInterval(updateDT,1000);
 
 </body>
 </html>
-
-
-
