@@ -221,12 +221,16 @@
 .close-btn{
     position:absolute;
     right:12px;
-    top:26px;
+    top:30px;
     background:transparent;
     border:none;
-    font-size:26px;
-    color:#fff;
+    font-size:22px;
+    color:#bbbbbb;     /* softer grey, not bright white */
+    font-weight:500;   /* thinner look */
     cursor:pointer;
+}
+.close-btn:active{
+    transform:scale(0.92);
 }
 
 
@@ -239,7 +243,7 @@
     <span>Mess Pass</span>
 
     <!-- Close button right side -->
-    <button class="close-btn" onclick="history.back()">x</button>
+    <button class="close-btn" onclick="history.back()">✕</button>
 </div>
 
 
