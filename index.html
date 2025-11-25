@@ -213,18 +213,18 @@
   }
 
   .avatar-img{
-    width:200%;
-    height:105%;
+    width:100%;
+    height:100%;
     object-fit:cover;
     object-position: center 10%;
   }
 .close-btn{
     position:absolute;
     right:12px;
-    top:18px;
+    top:26px;
     background:transparent;
     border:none;
-    font-size:22px;
+    font-size:26px;
     color:#fff;
     cursor:pointer;
 }
@@ -239,7 +239,7 @@
     <span>Mess Pass</span>
 
     <!-- Close button right side -->
-    <button class="close-btn" onclick="history.back()">✖</button>
+    <button class="close-btn" onclick="history.back()">x</button>
 </div>
 
 
@@ -255,10 +255,10 @@
           </div>
 
           <div class="title-col">
-            <div class="meal-title" id="mealTitle"></div>
-            <div class="sid">12311172</div>
-            <div class="line">Burraleni Kumar</div>
-            <div class="line">Mess BS-09</div>
+            <div class="meal-title">Dinner</div>
+            <div class="sid">12311129</div>
+            <div class="line">Cheruku Sai Kumar</div>
+            <div class="line">Mess-Centre-02</div>
           </div>
         </div>
 
@@ -325,24 +325,7 @@ function updateDT(){
 }
 updateDT();
 setInterval(updateDT,1000);
-  function updateMeal() {
-  const now = new Date();
-  const hour = now.getHours();
-  let meal = "Dinner";
-
-  if (hour < 11) meal = "Breakfast";
-  else if (hour < 16) meal = "Lunch";
-
-  document.getElementById("mealTitle").textContent = meal;
-}
-
-updateMeal();
-
 </script>
 
 </body>
 </html>
-
-
-
-
