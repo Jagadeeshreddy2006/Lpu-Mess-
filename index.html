@@ -1,22 +1,9 @@
 <!doctype html>
 <html lang="en">
 <head>
-
-
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Mess Pass</title>
- <link rel="manifest" href="./manifest.json">
-<meta name="theme-color" content="#3b3b3b">
-<script>
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('./sw.js').catch(console.error);
-    });
-  }
-</script>
-
-
 <style>
   :root{
     --card-max:500px;
@@ -48,7 +35,7 @@
     z-index:30;
   }
   .topbar .handle{
-    width:48px;height:6px;border-radius:4px;background:#d6d6d6;
+    width:44px;height:6px;border-radius:4px;background:#d6d6d6;
     position:absolute;top:12px;left:50%;transform:translateX(-50%);
   }
   .topbar span{font-size:17px;font-weight:400}
@@ -179,7 +166,7 @@
     text-align:center;
     font-size:26px;
     font-weight:700;
-    color:#008000;
+    color:#6FB543;
     margin-bottom:8px;
     text-shadow:0px 1px 2px rgba(0,0,0,0.2);
   }
@@ -248,7 +235,6 @@
 
 
 </style>
-  
 </head>
 <body>
 
@@ -273,7 +259,7 @@
           </div>
 
           <div class="title-col">
-            <div class="meal-title">Dinner</div>
+            <div class="meal-title" id="mealTitle"></div>
             <div class="sid">12311129</div>
             <div class="line">Cheruku Sai Kumar</div>
             <div class="line">Mess-Centre-02</div>
@@ -343,10 +329,20 @@ function updateDT(){
 }
 updateDT();
 setInterval(updateDT,1000);
+function updateMeal() {
+  const now = new Date();
+  const hour = now.getHours();
+  let meal = "Dinner";
+
+  if (hour < 11) meal = "Breakfast";
+  else if (hour < 16) meal = "Lunch";
+
+  document.getElementById("mealTitle").textContent = meal;
+}
+
+updateMeal();
+
 </script>
 
 </body>
 </html>
-
-
-
