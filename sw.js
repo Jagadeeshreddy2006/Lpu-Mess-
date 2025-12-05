@@ -10,4 +10,5 @@ self.addEventListener("activate", (event) => {
   console.log("Service worker activated");
 });
 
+
 // No fetch handler needed for installability, but you can add later if you want offline.
