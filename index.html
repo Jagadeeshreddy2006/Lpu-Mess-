@@ -1,19 +1,21 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#3b3b3b">
 
-<!-- Required to allow install -->
-<script>
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/sw.js');
-  }
-</script>
 
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Mess Pass</title>
+  <link rel="manifest" href="./manifest.json">
+<meta name="theme-color" content="#3b3b3b">
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('./sw.js').catch(console.error);
+    });
+  }
+</script>
+
 <style>
   :root{
     --card-max:500px;
@@ -344,4 +346,5 @@ setInterval(updateDT,1000);
 
 </body>
 </html>
+
 
