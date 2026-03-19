@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600&display=swap" rel="stylesheet">
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Mess Pass</title>
@@ -16,12 +17,11 @@
   *{box-sizing:border-box}
   body{
     margin:0;
-    font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    background:#f3f3f0;
+    font-family: 'Roboto', sans-serif;
+    background:f3f3f0;
     color:var(--text);
   }
 
-  /* Full width top bar */
   .topbar{
     width:100%;
     height:68px;
@@ -40,7 +40,6 @@
   }
   .topbar span{font-size:17px;font-weight:400}
 
-  /* ❌ Close button on top-right */
   .close-btn{
     position:absolute;
     right:12px;
@@ -56,26 +55,25 @@
 
   .wrap{display:flex;justify-content:center;padding:18px 8px 40px;}
   .card{
-    width:98%;
+    width:97%;
     max-width:var(--card-max);
-    background:#f2f2f2;       /* less bright white */
+    background:#f2f2f2;
     border-radius:var(--card-radius);
     box-shadow:
-        0 3px 8px rgba(0,0,0,0.6),    /* base shadow */
-        0 8px 18px rgba(0,0,0,0.12);   /* soft spread */
+        0 3px 8px rgba(0,0,0,0.6),
+        0 8px 18px rgba(0,0,0,0.12);
     position:relative;
   }
 
-  /* Timer Box */
   .timer{
     position:absolute;
-    top:4px;
-    right:8px;
+    top:-12px;
+    right:-10px;
     min-width:45px;
     height:40px;
     padding:0 10px;
     border-radius:18px;
-    background:#999;   /* dark grey */
+    background:#999;
     display:flex;align-items:center;justify-content:center;
     font-size:18px;font-weight:400;
     text-shadow:0px 1px 2px rgba(0,0,0,0.2);
@@ -86,33 +84,44 @@
 
   .profile-row{
     display:flex;
-    gap:12px;
-    align-items:flex-start;
-    margin-top:18px;
+    gap:24px;   /* slight improvement */
+    align-items:center;
+    margin-top:12px;
   }
 
   .avatar{
-    width:104px;
-    height:104px;
-    border-radius:50%;
-    background:linear-gradient(135deg,#0b8f63,#0b7a5f);
-    color:white;
-    font-size:34px;
-    font-weight:800;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    border:1px solid #000;
+    width:145px;
+    height:148px;
+    border-radius:0;
+    overflow:hidden;
     box-shadow:0 12px 26px rgba(0,0,0,0.18);
-    margin-top:0px;
-    margin-left:-12px;
-    margin-right:-5px;
   }
+
+  .avatar-img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position: center 10%;
+  }
+
+  /* ✅ QR BOX */
+  .qr-box{
+  width:148px;
+  height:138px;
+  background:#fff;
+  border:1px solid #333;   /* darker clean border */
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-top:6px;
+  overflow:hidden;         /* removes inner spacing effect */
+  box-shadow:0 12px 26px rgba(0,0,0,0.18);
+}
 
   .title-col{flex:1;}
 
   .meal-title{
-    font-size:30px;
+    font-size:16px;
     font-weight:500;
     color:#000;
     margin-top:1px;
@@ -124,57 +133,54 @@
   }
 
   .sid, .line {
-    font-size:16px;
-    font-weight:600;
+    font-size:14px;
+    font-weight:500;
     color:#000;
-    margin-bottom:4px;
+    margin-bottom:12px;
     margin-left:3px;
-    line-height:1.4;
+    line-height:0.9;
     text-shadow:0px 1px 2px rgba(0,0,0,0.9);
   }
 
-  /* COURSE CODE — more spacing top + bottom */
   .course{
     font-size:16px;
     font-weight:400;
     margin-top:24px;
-    margin-bottom:38px;
-    margin-left:-3px;
-    line-height:1.3;
-    letter-spacing:0.2px; 
+    margin-bottom:48px;
+    text-align:center;
+    margin-left:0px;
+    line-height:1.4;
+    letter-spacing:0.1px; 
     color:#222;
-    text-shadow:0px 1px 2px rgba(0,0,0,0.3);
+   text-shadow:0px 1px 2px rgba(0,0,0,0.4);
+   
   }
 
-  /* DATE + TIME — more spacing */
   .dt-row{
     display:flex;
     justify-content:space-between;
     margin-top:32px;
-    margin-bottom:42px;
+    margin-bottom:38px;
     padding:0 64px;
     margin-left:-58px;
     text-shadow:0px 1px 2px rgba(0,0,0,0.4);
   }
   .dt-row .date,.dt-row .time{
     font-size:19px;
-    font-weight:500;
+    font-weight:400;
   }
 
-  /* Meal Approved */
   .approved{
     text-align:center;
-    font-size:26px;
+    font-size:24px;
     font-weight:700;
-    color:#6FB543;
-    margin-bottom:8px;
-    text-shadow:0px 1px 2px rgba(0,0,0,0.2);
+    color:#53bf11;
+    margin-bottom:6px;
+    text-shadow:0px 1px 2px rgba(0,0,0,0.3);
   }
 
-  /* Rate Button */
   .rate-wrap{
     text-align:center;
-    margin-bottom:0px;
   }
   .rate-btn{
     padding:4px 6px;
@@ -185,11 +191,10 @@
     font-weight:600;
   }
 
-  /* Brown box — FULL WIDTH again */
   .brown-box{
     width:100%;
-    background:#8c4d4d; 
-    padding:22px;
+    background:#152e09;  
+    padding:20px;
     border-bottom-left-radius:var(--card-radius);
     border-bottom-right-radius:var(--card-radius);
     margin-top:-12px;
@@ -204,35 +209,49 @@
     overflow:hidden;
   }
 
-  .avatar{
-    width:145px;
-    height:148px;
-    border-radius:50%;
-    overflow:hidden;
-    box-shadow:0 12px 26px rgba(0,0,0,0.18);
-  }
-
-  .avatar-img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    object-position: center 10%;
-  }
-.close-btn{
+  .close-btn{
     position:absolute;
     right:12px;
     top:32px;
     background:transparent;
     border:none;
     font-size:16px;
-    color:#f0f0f0;     /* softer grey, not bright white */
-    font-weight:800;   /* thinner look */
+    color:#f0f0f0;
+    font-weight:800;
     cursor:pointer;
+  }
+  .left-col{
+  width:145px;   /* same as image & QR */
+  text-align:center;
+  margin-top:10px;   /* controls gap */
 }
-.close-btn:active{
-    transform:scale(0.92);
+.right-col{
+  width:145px;   /* same as image & QR */
+  text-align:center;
+  margin-top:3px;
 }
 
+.left-col .sid, .left-col .line,
+.right-col .meal-title, .right-col .line{
+  margin-left:0;
+}
+.assigned-mess{
+  font-size:16px;
+  font-weight:400;
+  margin-top:-20px;   /* adjust spacing */
+  margin-bottom:38px;
+  text-align:center;
+  margin-left:0px;
+  letter-spacing:0.1px; 
+  color:#222;
+  text-shadow:0px 1px 2px rgba(0,0,0,0.4);
+  
+}
+.qr-img{
+  width:105%;
+  height:105%;
+  object-fit:cover;
+}
 
 </style>
 </head>
@@ -241,66 +260,76 @@
 <div class="topbar">
     <div class="handle"></div>
     <span>Mess Pass</span>
-
-    <!-- Close button right side -->
     <button class="close-btn" onclick="history.back()">✕</button>
 </div>
 
+<div class="wrap">
+  <article class="card">
 
-  <div class="wrap">
-    <article class="card">
+    <div class="timer" id="timerEl">30</div>
 
-      <div class="timer" id="timerEl">30</div>
+    <div class="content">
+      <div class="profile-row">
 
-      <div class="content">
-        <div class="profile-row">
-          <div class="avatar">
-            <img src="profile.jpg" class="avatar-img">
-          </div>
-
-          <div class="title-col">
-            <div class="meal-title" id="mealTitle"></div>
-            <div class="sid">12316580</div>
-            <div class="line">Masineedi Lokesh</div>
-            <div class="line">Mess-Centre-02</div>
-          </div>
-        </div>
-
-        <div class="course">
-          P132: B.Tech. (Computer Science and Engineering)(2023)
-        </div>
-
-        <div class="dt-row">
-          <div class="date" id="dateText">Nov 20, 2025</div>
-          <div class="time" id="timeText">1:24 AM</div>
-        </div>
-
-        <div class="approved">Meal Approved</div>
-
-        <div class="rate-wrap">
-          <button class="rate-btn">⭐  RATE US</button>
-        </div>
-
-      </div>
-
-      <div class="brown-box">
-        <div class="brown-inner">
-          <video src="video.mp4" autoplay muted playsinline style="
-              width:94%;
-              height:94%;
-              object-fit:contain;
-              display:block;
-              margin-left:14px;
-              margin-top:20px; 
-          "></video>
-        </div>
-      </div>
-
-    </article>
+  <div>
+    <div class="avatar">
+      <img src="profile.jpg" class="avatar-img">
+    </div>
+    <div class="left-col">
+      <div class="sid">12311286</div>
+      <div class="line">Jagan Mohan</div>
+    </div>
   </div>
 
+  <div>
+    <div class="qr-box">
+      <img src="qr.png" class="qr-img">
+    </div>
+    <div class="right-col">
+      <div class="meal-title" id="mealTitle"></div>
+      <div class="line">Mess-Centre-02</div>
+    </div>
+  </div>
+
+</div>
+
+      <div class="course">
+        P132: B.Tech. (Computer Science and Engineering)(2023)
+      </div>
+    <div class="assigned-mess">
+  Your Assigned Mess - Mess-Centre-02
+</div>
+
+      <div class="dt-row">
+        <div class="date" id="dateText">Nov 20, 2025</div>
+        <div class="time" id="timeText">1:24 AM</div>
+      </div>
+
+      <div class="approved">Meal Approved</div>
+
+      <div class="rate-wrap">
+        <button class="rate-btn">⭐ RATE US</button>
+      </div>
+
+    </div>
+
+    <div class="brown-box">
+      <div class="brown-inner">
+        <video src="video.mp4" autoplay muted playsinline style="
+            width:94%;
+            height:94%;
+            object-fit:contain;
+            display:block;
+            margin-left:14px;
+            margin-top:10px; 
+        "></video>
+      </div>
+    </div>
+
+  </article>
+</div>
+
 <script>
-/* Countdown 30 -> 1 */
 let sec = 30;
 const timerEl = document.getElementById("timerEl");
 timerEl.textContent = sec;
@@ -313,41 +342,30 @@ let t = setInterval(()=>{
   } else {
     timerEl.textContent = sec;
   }
-},1000); 
+},1000);
 
-/* Live date/time */
 function pad(n){return n<10?"0"+n:n;}
 function updateDT(){
   const now=new Date();
   const m=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
-  const d=document.getElementById("dateText");
-  const tm=document.getElementById("timeText");
-  d.textContent=`${m[now.getMonth()]} ${pad(now.getDate())}, ${now.getFullYear()}`;
+  document.getElementById("dateText").textContent=
+    `${m[now.getMonth()]} ${pad(now.getDate())}, ${now.getFullYear()}`;
   let h=now.getHours(), mm=pad(now.getMinutes()), ap=h>=12?"PM":"AM";
   h=h%12||12;
-  tm.textContent=`${h}:${mm} ${ap}`;
+  document.getElementById("timeText").textContent=`${h}:${mm} ${ap}`;
 }
 updateDT();
 setInterval(updateDT,1000);
+
 function updateMeal() {
-  const now = new Date();
-  const hour = now.getHours();
+  const hour = new Date().getHours();
   let meal = "Dinner";
-
-  if (hour < 11) meal = "Breakfast";
+  if (hour < 11) meal = "BreakFast";
   else if (hour < 16) meal = "Lunch";
-
   document.getElementById("mealTitle").textContent = meal;
 }
-
 updateMeal();
-
 </script>
 
 </body>
 </html>
-
-
-
-
-
